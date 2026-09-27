@@ -1,0 +1,10 @@
+[Unit]
+Description=Backup diario do banco loja (ufla-devops-shop)
+After=postgresql.service
+
+[Service]
+Type=oneshot
+User=ufla-shop
+Group=ufla-shop
+EnvironmentFile=/etc/ufla-shop.env
+ExecStart=/opt/ufla-shop/scripts/backup.sh
